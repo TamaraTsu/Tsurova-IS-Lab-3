@@ -1,7 +1,7 @@
-# Vidjaya-IS-Lab3
+# Tsurova-IS-Lab3
 Intelligent System laboratory work
 
-Виджая Стивен 932001
+932001
 
 2022
 ## Тема № 14. Применение искусственных нейронных сетей для обработки информации.
@@ -17,13 +17,13 @@ Intelligent System laboratory work
 ## Как запустить программу?
 1. Клонируйте репозитории
 2. Откройте папку в любой IDE
-3. Вам нужно установить [anaconda](https://docs.anaconda.com/anaconda/install/windows/) для Windows и [MiniForge](https://github.com/conda-forge/miniforge) для MacOS. Нажмите ссылку чтобы посмотреть инструкцию к установлению.
+3. Вам нужно установить [anaconda](https://docs.anaconda.com/anaconda/install/windows/) для Windows и [MiniForge](https://github.com/conda-forge/miniforge) для MacOS. Нажмите ссылку, чтобы посмотреть инструкцию к установлению.
 4. Если вы используете VS Code, то через терминал/косноль напишите ```pip install -r requirements.txt```
 5. Если нет, то можно в консоли или терминале сначала открыть эту папку. Напишите ```cd yourworkingdirectory/thisclonefoldername```, потом напишите ```pip install -r requirements.txt```
 6. После этого вы сможете спокойно запускать нашу программу, если 
-   1. Вы хотите просто использовать наше приложение то напишите в консоль/терминал ```python interface.py``` в Windows и ```python3 interface.py``` в MacOS 
-   2. Вы хотите тестировать наш ИНС то напишите в консоль/терминал ```python main.py``` в Windows и ```python3 main.py``` в MacOS.
-   3. Вы хотите треинировать наш ИНС, поменять параметры, размер пикселей, и.т.д. вам нужно сначала комментировать ```main_test()``` и раскомментироват ```main()``` в файле ```main.py``` то напишите в консоль/терминал ```python main.py``` в Windows и ```python3 main.py``` в MacOS.
+   1. Вы хотите просто использовать наше приложение, то напишите в консоль/терминал ```python interface.py``` в Windows и ```python3 interface.py``` в MacOS 
+   2. Вы хотите тестировать наш ИНС, то напишите в консоль/терминал ```python main.py``` в Windows и ```python3 main.py``` в MacOS.
+   3. Вы хотите тренировать наш ИНС, поменять параметры, размер пикселей, и.т.д. вам нужно сначала скомментировать ```main_test()``` и раскомментировать ```main()``` в файле ```main.py``` , затем напишите в консоль/терминал ```python main.py``` в Windows и ```python3 main.py``` в MacOS.
 
 
 ## Результаты
