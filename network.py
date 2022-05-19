@@ -51,20 +51,6 @@ class Neural_Network:
                 delta_layer.append(delta_i)
             self.delta.insert(0, delta_layer)
 
-    def backward_propagation(self, input_data, target_data):
-        input = input_data
-        target = target_data
-
-        # Calculate every neuron's error
-        self.derrivative_error(input, target)
-
-        # Calculate new weight & new bias
-        for layer in reversed(range(len(self.weights))):
-            for i in range(len(self.weights[layer][0])):
-                for j in range(len(self.weights[layer])):
-                    self.weights[layer][j][i] -= (self.learn_rate * self.delta[layer][j] * (input[i] if layer == 0 else self.neuron_value[layer - 1][i]))
-                    self.bias[layer][j] -= (self.learn_rate * self.delta[layer][j] * 1)
-    
     def forward_propagation(self, input_data):
         input = input_data
 
@@ -106,6 +92,20 @@ class Neural_Network:
             activation = self.sigmoid(weighted_sum)
             activation_value.append(activation)
         self.result_value = activation_value
+        
+    def backward_propagation(self, input_data, target_data):
+        input = input_data
+        target = target_data
+
+        # Calculate every neuron's error
+        self.derrivative_error(input, target)
+
+        # Calculate new weight & new bias
+        for layer in reversed(range(len(self.weights))):
+            for i in range(len(self.weights[layer][0])):
+                for j in range(len(self.weights[layer])):
+                    self.weights[layer][j][i] -= (self.learn_rate * self.delta[layer][j] * (input[i] if layer == 0 else self.neuron_value[layer - 1][i]))
+                    self.bias[layer][j] -= (self.learn_rate * self.delta[layer][j] * 1)
 
     def train_network(self, epoch: int):       
         # To get the statistic of the data 
@@ -250,6 +250,16 @@ class Neural_Network:
             Average losses: {(np.mean(np.array(self.test_losses))):.3f} %
         """)
     
+    def predict(self, input_data):
+        # input = self.resize_input(input_data)           # Resize the input data to 10 x 10 matrix
+        input = input_data.flatten()                                  # Flatten the array to 100 sized array
+
+        self.forward_propagation(input)
+
+        prediction = np.array(self.result_value)
+
+        return np.argmax(prediction), round(np.amax(prediction) * 100, 3)
+
     def get_weight(self, layer: int):
         # To get the array of weights layer
         return self.weights[layer]

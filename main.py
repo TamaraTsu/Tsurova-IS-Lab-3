@@ -3,6 +3,7 @@ from functions import *
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Main function for training our neural network
 def main():
 	n = Neural_Network((10, 10), 0.02, 3, 20)
 
@@ -24,5 +25,11 @@ def main():
 
 	n.test_network()
 
+# Main function for testing our neural network
+def main_test():
+	n = Neural_Network((10, 10), 0.02, 3, 20)
+	n.test_network()
+
 if __name__ == '__main__':
-	main()
+	# main()
+	main_test()
